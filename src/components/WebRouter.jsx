@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes as Switch, Route, Navigate } from "react-router-dom";
 
-import Test from "./test";
+import ErrorPage from "./ErrorPage";
 
 import Book from "./books/detail"
 import Addbook from "./books/add"
@@ -22,7 +22,7 @@ export default function WebRouter(params) {
                 <Route path="user" element={<User />} />
                 <Route path="user/add" element={<Adduser />} />
                 <Route path="user/edit" element={<Edituser />} />
-                <Route path="/*" element={<Test />} />
+                <Route path="/*" element={<ErrorPage />} />
             </Switch>
         </>
     );

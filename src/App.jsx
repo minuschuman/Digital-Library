@@ -8,7 +8,7 @@ import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 
 import Login from "./components/Login";
-import Test from "./components/test";
+import ErrorPage from "./components/ErrorPage";
 import SideNav from "./components/SideNav";
 import WebRouter from "./components/WebRouter";
 
@@ -48,7 +48,7 @@ export default function App(params) {
         ) : (
           <Switch>
             <Route path="/" element={<Login setToken={setToken} />} />
-            <Route path="/*" element={<Test />} />
+            <Route path="/*" element={<ErrorPage />} />
           </Switch>
         )}
       </BrowserRouter>
