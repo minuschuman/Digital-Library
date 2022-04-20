@@ -9,7 +9,7 @@ import "mdbreact/dist/css/mdb.css";
 
 import Login from "./components/Login";
 import Test from "./components/test";
-import CideNav from "./components/CideNav";
+import SideNav from "./components/SideNav";
 import WebRouter from "./components/WebRouter";
 
 function getToken() {
@@ -40,7 +40,7 @@ export default function App(params) {
       <BrowserRouter>
         {token ? (
           <>
-            <CideNav setToken={token} onToggle={setToggle} />
+            <SideNav setToken={token} onToggle={setToggle} />
             <Main expanded={toggle}>
               <WebRouter />
             </Main>
