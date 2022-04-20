@@ -50,6 +50,18 @@
   }
 }
 
-nav{
-    height: 100vh;
+nav {
+  height: 100vh;
+}
+.sidenav---sidenav---_2tBP {
+  background: #434343 !important;
+}
+.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL
+  .sidenav---sidenav-subnav---1EN61
+  > .sidenav---sidenav-subnavitem---1cD47.sidenav---selected---1EK3y
+  > .sidenav---navitem---9uL5T {
+  color: fuchsia;
+}
+.sidenav---highlighted---oUx9u {
+  background: #200000 !important;
 }

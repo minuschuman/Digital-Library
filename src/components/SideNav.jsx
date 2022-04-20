@@ -8,7 +8,7 @@ export default function SideNavbar(params) {
     let navigate = useNavigate();
     return (
         <div>
-            <SideNav className="bg-danger"
+            <SideNav className=""
                 onSelect={(selected) => {
                     navigate(selected);
                 }}
@@ -19,6 +19,12 @@ export default function SideNavbar(params) {
                 <SideNav.Toggle />
                 <SideNav.Nav defaultSelected="/dashboard">
                     <NavItem eventKey="/dashboard">
+                        <NavIcon>
+                            <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+                        </NavIcon>
+                        <NavText>Home</NavText>
+                    </NavItem>
+                    <NavItem eventKey="/dash">
                         <NavIcon>
                             <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
