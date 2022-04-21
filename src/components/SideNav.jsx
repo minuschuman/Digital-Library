@@ -10,21 +10,23 @@ export default function SideNavbar(params) {
         <div>
             <SideNav className=""
                 onSelect={(selected) => {
-                    navigate(selected);
+                    if (selected === "logout") {
+                        sessionStorage.clear();
+                        navigate("/");
+                        window.location.href = "/";
+
+                    } else {
+                        params.onSelect(selected);
+                        navigate(selected);
+                    }
                 }}
                 onToggle={(expanded) => {
                     params.onToggle(expanded);
                 }}
             >
                 <SideNav.Toggle />
-                <SideNav.Nav defaultSelected="/dashboard">
-                    <NavItem eventKey="/dashboard">
-                        <NavIcon>
-                            <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
-                        </NavIcon>
-                        <NavText>Home</NavText>
-                    </NavItem>
-                    <NavItem eventKey="/dash">
+                <SideNav.Nav defaultSelected="dashboard">
+                    <NavItem eventKey="dashboard">
                         <NavIcon>
                             <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
@@ -59,6 +61,12 @@ export default function SideNavbar(params) {
                         <NavItem eventKey="book/edit">
                             <NavText>Edit</NavText>
                         </NavItem>
+                    </NavItem>
+                    <NavItem eventKey="logout">
+                        <NavIcon>
+                            <i className="fas fa-power-off" style={{ fontSize: '1.75em' }} />
+                        </NavIcon>
+                        <NavText>Sign Out</NavText>
                     </NavItem>
                 </SideNav.Nav>
             </SideNav>
