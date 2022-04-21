@@ -8,22 +8,23 @@ export default function renderBreadcrumbs(props) {
     'user': ['Student'],
     'user/add': ['Student', 'Add'],
     'user/edit': ['Student', 'Edit'],
-    'book':"Book",
+    'book': "Book",
     'book/add': ['Book', 'Add'],
     'book/edit': ['Book', 'Edit'],
   };
-  const list = ensureArray(pageTitle[selected]);
-
+  var list = ensureArray(pageTitle[selected]);
   return (
-    <Breadcrumb style={{ margin:"0 -20px" }}>
-      {list.map((item, index) => (
-        <Breadcrumb.Item
-          active={index === list.length - 1}
-          key={`${selected}_${index}`}
-        >
-          {item}
-        </Breadcrumb.Item>
-      ))}
-    </Breadcrumb>
+    (list.length > 0) ? (
+      <Breadcrumb>
+        {list.map((item, index) => (
+          <Breadcrumb.Item
+            active={index === list.length - 1}
+            key={`${selected}_${index}`}
+          >
+            {item}
+          </Breadcrumb.Item>
+        ))}
+      </Breadcrumb>
+    ) : ('')
   );
 }
