@@ -25,7 +25,7 @@ export default function SideNavbar(params) {
                 }}
             >
                 <SideNav.Toggle />
-                <SideNav.Nav defaultSelected="dashboard">
+                <SideNav.Nav defaultSelected={window.location.pathname.slice(1)}>
                     <NavItem eventKey="dashboard">
                         <NavIcon>
                             <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />

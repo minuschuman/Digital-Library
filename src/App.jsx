@@ -32,7 +32,8 @@ const Main = styled.main`
 export default function App(params) {
   const token = getToken();
   const [toggle, setToggle] = useState(false);
-  const [selected, setSelected] = useState("dashboard");
+  const check = window.location.pathname.slice(1);
+  const [selected, setSelected] = useState(check);
   return (
     <>
       <BrowserRouter>
