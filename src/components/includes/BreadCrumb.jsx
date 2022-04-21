@@ -8,6 +8,9 @@ export default function renderBreadcrumbs(props) {
     'user': ['Student'],
     'user/add': ['Student', 'Add'],
     'user/edit': ['Student', 'Edit'],
+    'book':"Book",
+    'book/add': ['Book', 'Add'],
+    'book/edit': ['Book', 'Edit'],
   };
   const list = ensureArray(pageTitle[selected]);
 
