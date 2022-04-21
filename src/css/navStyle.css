@@ -1,0 +1,19 @@
+.nav-link:hover {
+  background: #000;
+}
+.nav-link {
+  font-size: 18px;
+  margin-right: 4px;
+}
+
+.brandName {
+  font-size: 24px;
+  font-weight: 600;
+  color: whitesmoke;
+}
+
+.nav .show {
+  display: block !important;
+  background: #000 !important;
+  /* z-index: 1000000000; */
+}

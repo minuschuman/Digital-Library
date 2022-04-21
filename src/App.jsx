@@ -5,6 +5,7 @@ import styled from "styled-components"
 import WebRouter from "./components/WebRouter";
 import Login from "./components/Login";
 import ErrorPage from "./components/ErrorPage";
+import Nav from "./components/includes/Nav";
 import SideNav from "./components/includes/SideNav";
 import BreadCrumb from "./components/includes/BreadCrumb"
 
@@ -41,6 +42,7 @@ export default function App(params) {
           <>
             <SideNav setToken={token} onToggle={setToggle} onSelect={setSelected} />
             <Main expanded={toggle}>
+              <Nav setToken={token} />
               <BreadCrumb url={selected} />
               <WebRouter />
             </Main>
