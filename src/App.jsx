@@ -5,7 +5,7 @@ import styled from "styled-components"
 import WebRouter from "./components/WebRouter";
 import Login from "./components/Login";
 import ErrorPage from "./components/ErrorPage";
-import SideNav from "./components/SideNav";
+import SideNav from "./components/includes/SideNav";
 import BreadCrumb from "./components/includes/BreadCrumb"
 
 function getToken() {
