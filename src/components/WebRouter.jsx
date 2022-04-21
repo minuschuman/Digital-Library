@@ -1,6 +1,12 @@
 import React from "react";
 import { Routes as Switch, Route, Navigate } from "react-router-dom";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "bootstrap-css-only/css/bootstrap.min.css";
+import "mdbreact/dist/css/mdb.css";
+
+import Dashboard from "./Dashboard"
 import ErrorPage from "./ErrorPage";
 
 import Book from "./books/detail"
@@ -16,6 +22,7 @@ export default function WebRouter(params) {
         <>
             <Switch>
                 <Route path="/" element={<Navigate replace to="/dashboard" />} />
+                <Route path="dashboard" element={<Dashboard />} />
                 <Route path="book" element={<Book />} />
                 <Route path="book/add" element={<Addbook />} />
                 <Route path="book/edit" element={<Editbook />} />
