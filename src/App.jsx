@@ -2,15 +2,11 @@ import React, { useState } from "react";
 import { BrowserRouter, Routes as Switch, Route } from "react-router-dom";
 import styled from "styled-components"
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "bootstrap-css-only/css/bootstrap.min.css";
-import "mdbreact/dist/css/mdb.css";
-
+import WebRouter from "./components/WebRouter";
 import Login from "./components/Login";
 import ErrorPage from "./components/ErrorPage";
 import SideNav from "./components/SideNav";
-import WebRouter from "./components/WebRouter";
+import BreadCrumb from "./components/includes/BreadCrumb"
 
 function getToken() {
   const tokenString = sessionStorage.getItem("token");
@@ -32,16 +28,19 @@ const Main = styled.main`
     margin-left: ${(props) => (props.expanded ? 240 : 64)}px;
 `;
 
+
 export default function App(params) {
   const token = getToken();
   const [toggle, setToggle] = useState(false);
+  const [selected, setSelected] = useState("dashboard");
   return (
     <>
       <BrowserRouter>
         {token ? (
           <>
-            <SideNav setToken={token} onToggle={setToggle} />
+            <SideNav setToken={token} onToggle={setToggle} onSelect={setSelected} />
             <Main expanded={toggle}>
+              <BreadCrumb url={selected} />
               <WebRouter />
             </Main>
           </>
