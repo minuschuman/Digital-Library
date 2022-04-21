@@ -26,10 +26,8 @@ export default function Login({ setToken }) {
             email,
             password,
         });
-        console.log(token.token);
         if (token.token !== false) {
             setToken(token);
-            console.log(token);
             window.location.href = "/";
         }
         else {
