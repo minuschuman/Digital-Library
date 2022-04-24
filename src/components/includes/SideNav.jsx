@@ -8,7 +8,7 @@ export default function SideNavbar(params) {
     let navigate = useNavigate();
     return (
         <div>
-            <SideNav className=""
+            <SideNav className="special-color-dark"
                 onSelect={(selected) => {
                     if (selected === "logout") {
                         sessionStorage.clear();
