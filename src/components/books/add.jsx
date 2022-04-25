@@ -55,16 +55,16 @@ export default function Add(params) {
         }
     };
     return (
-        <div className="mx-md-4 px-md-4 py-4 mt-2">
-            <h2 className='card-header font-weight-bold '>Add Book</h2>
-            <div className="container-fluid my-3">
-                <div className="row p-4">
+        <div className="">
+            {/* <h2 className='card-header font-weight-bold '>Add Book</h2> */}
+            <div className="container-fluid">
+                <div className="row">
                     <div className="col-md-3"></div>
-                    <div className="car-d text-light col-md-6 p-sm-5">
+                    <div className="text-ligh-t col-md-6">
                         <form onSubmit={submit} method="POST" encType="multipart/form-data">
                             <div className="form-group">
                                 <label>Book</label>
-                                <input type="text" name="bookname" className="form-control" placeholder="Movie" value={name} onChange={(e) => { setName(e.target.value); }} />
+                                <input type="text" name="bookname" className="form-control" placeholder="" value={name} onChange={(e) => { setName(e.target.value); }} />
                             </div>
                             <div className="form-group">
                                 <label>ISBN</label>
