@@ -13,27 +13,18 @@ export default function Detail() {
     return (
         <>
             <div className="container-fluid">
-                {
-                    <>
-                        name:{book.name}<br />
-                        isbn
-                        author
-                        price
-                    </>
-                    // Object.entries(book).map(([index, value], i) => {
-                    //     return (
-                    //         <div key={i}>
-                    //             {index}
-                    //         </div>
-                    //     )
-                    // })
-                }
                 <div className="row">
                     <div className="col-4">
                         <img className="img-fluid col-md-6 align-middle" src={Axios.defaults.baseURL + "../" + book.bookFile} alt={book.name} />
                     </div>
                     <div className="col-8">
-                        <h1>{book.name}</h1>
+                        <h1>name:{book.name}</h1>
+                        <h1>author: {book.author}</h1>
+                        <h1>price: {book.price}</h1>
+                        <h1>isbn: {book.isbn}</h1>
+                        <h1>category: {book.category}</h1>
+                        <h1>edition: {book.edition}</h1>
+                        <h1>publication: {book.publication}</h1>
                     </div>
                 </div>
             </div>
