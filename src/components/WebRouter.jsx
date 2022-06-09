@@ -12,6 +12,7 @@ import ErrorPage from "./ErrorPage";
 import Book from "./books/detail"
 import Addbook from "./books/add"
 import Editbook from "./books/edit"
+import BookDetail from "./books/single";
 
 import User from "./users/detail"
 import Adduser from "./users/add"
@@ -24,11 +25,13 @@ export default function WebRouter(params) {
                 <Route path="/" element={<Navigate replace to="/dashboard" />} />
                 <Route path="dashboard" element={<Dashboard />} />
                 <Route path="book" element={<Book />} />
+                <Route path="book/:_id" element={<BookDetail />} />
                 <Route path="book/add" element={<Addbook />} />
-                <Route path="book/edit" element={<Editbook />} />
+                <Route path="book/edit/" element={<Editbook />} />
                 <Route path="user" element={<User />} />
+                {/* <Route path="user/:_id" element={<UserDetail />} /> */}
                 <Route path="user/add" element={<Adduser />} />
-                <Route path="user/edit" element={<Edituser />} />
+                <Route path="user/edit/:_id" element={<Edituser />} />
                 <Route path="/*" element={<ErrorPage />} />
             </Switch>
         </>
