@@ -10,11 +10,11 @@ async function loginUser(credentials) {
         email: credentials.email, password: credentials.password
     }).then((res) =>
         res.data
-    ).catch(
-        err => (
-            console.log("err")
-        )
-    )
+    ).catch(function (error) {
+        if (error.response.status === 401) {
+            return
+        }
+    })
 }
 
 export default function Login({ setToken }) {
@@ -26,22 +26,25 @@ export default function Login({ setToken }) {
             email,
             password,
         });
-        if (token.token !== false) {
-            setToken(token);
-            window.location.href = "/";
-        }
-        else {
+        if (!token) {
             alert("Incorrect Password");
-        }
+        } else
+            if (token.token !== false) {
+                setToken(token);
+                window.location.href = "/";
+            }
+
     };
     return (
         <>
             <header>
                 <nav className="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style={{ zIndex: "2000" }}>
                     <div className="container-fluid">
-                        <a className="navbar-brand nav-link" rel="noreferrer" target="_blank" href="https://mdbootstrap.com/docs/standard/">
-                            <strong>Digital Library</strong>
-                        </a>
+                        <h1 style={{ display: "inline", fontSize: "1em", fontWeight: "normal" }}>
+                            <a className="navbar-brand nav-link" rel="noreferrer" target="_blank" href="/">
+                                Digital Library
+                            </a>
+                        </h1>
                         <button className="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
                             <i className="fas fa-bars"></i>
                         </button>
@@ -92,7 +95,7 @@ export default function Login({ setToken }) {
             <footer className="bg-dark text-center text-white">
                 <div className="text-center p-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
                     © 2020 Copyright:
-                    <a className="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                    <a className="text-white" href="https://chuman.com.np/">minusChuman</a>
                 </div>
             </footer>
         </>
