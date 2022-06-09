@@ -7,7 +7,7 @@ import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 export default function SideNavbar(params) {
     let navigate = useNavigate();
     return (
-        <div>
+        <div className='sidenav_custom_class'>
             <SideNav className="special-color-dark"
                 onSelect={(selected) => {
                     if (selected === "logout") {
