@@ -43,9 +43,9 @@ export default function SideNavbar(params) {
                         <NavItem eventKey="user/add">
                             <NavText>Add</NavText>
                         </NavItem>
-                        <NavItem eventKey="user/edit">
+                        {/* <NavItem eventKey="user/edit">
                             <NavText>Edit</NavText>
-                        </NavItem>
+                        </NavItem> */}
                     </NavItem>
                     <NavItem eventKey="Books">
                         <NavIcon>
@@ -58,9 +58,9 @@ export default function SideNavbar(params) {
                         <NavItem eventKey="book/add">
                             <NavText>Add</NavText>
                         </NavItem>
-                        <NavItem eventKey="book/edit">
+                        {/* <NavItem eventKey="book/edit">
                             <NavText>Edit</NavText>
-                        </NavItem>
+                        </NavItem> */}
                     </NavItem>
                     <NavItem eventKey="logout">
                         <NavIcon>
