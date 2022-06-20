@@ -17,6 +17,7 @@ import BookDetail from "./books/single";
 import User from "./users/detail"
 import Adduser from "./users/add"
 import Edituser from "./users/edit"
+import UserDetail from "./users/single"
 
 export default function WebRouter(params) {
     return (
@@ -32,8 +33,10 @@ export default function WebRouter(params) {
                 {/* <Route path="user/:_id" element={<UserDetail />} /> */}
                 <Route path="user/add" element={<Adduser />} />
                 <Route path="user/edit/:_id" element={<Edituser />} />
+                <Route path="user/:_id/" element={<UserDetail />} />
                 <Route path="/*" element={<ErrorPage />} />
             </Switch>
+            {/* <AuthVerify logOut={this.logOut}/> */}
         </>
     );
 }
