@@ -28,11 +28,14 @@ export default function Login({ setToken }) {
         });
         if (!token) {
             alert("Incorrect Password");
-        } else
-            if (token.token !== false) {
-                setToken(token);
-                window.location.href = "/";
+        } else {
+            if (token.token !== false && token.role === "admin") {
+                    setToken(token);
+                    window.location.href = "/";
+            } else {
+                alert("Unauthorized")
             }
+        }
 
     };
     return (
